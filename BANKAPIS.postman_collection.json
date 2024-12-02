@@ -1,0 +1,163 @@
+{
+	"info": {
+		"_postman_id": "4402aa47-129e-4bb0-af0a-62866d6fecc2",
+		"name": "BANKAPIS",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "9396268",
+		"_collection_link": "https://ddd333-5948.postman.co/workspace/ff451450-a361-4fcb-8919-7ba59206e370/collection/9396268-4402aa47-129e-4bb0-af0a-62866d6fecc2?action=share&source=collection_link&creator=9396268"
+	},
+	"item": [
+		{
+			"name": "AddCustomer",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"accountNo\": 0,\r\n  \"idNumber\": 0,\r\n  \"surName\": \"string\",\r\n  \"otherName\": \"string\",\r\n  \"phoneNumber\": \"string\",\r\n  \"email\": \"string\",\r\n  \"address\": \"string\",\r\n  \"city\": \"string\",\r\n  \"nextofKin\": [\r\n    {\r\n      \"name\": \"string\",\r\n      \"relationship\": \"string\",\r\n      \"awardedratio\": 0\r\n    }\r\n  ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseurl}}/AddCustomer",
+					"host": [
+						"{{baseurl}}"
+					],
+					"path": [
+						"AddCustomer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "MakeDeposit",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"id\": 0,\r\n  \"accountNo\": 2345,\r\n  \"amount\": 2000,\r\n  \"depositDate\": \"2024-11-29T14:12:37.288Z\",\r\n  \"refno\": \"string\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseurl}}/Deposit",
+					"host": [
+						"{{baseurl}}"
+					],
+					"path": [
+						"Deposit"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetBalance",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseurl}}/CheckBalance/2345",
+					"host": [
+						"{{baseurl}}"
+					],
+					"path": [
+						"CheckBalance",
+						"2345"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ApplyLoan",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"period\": 0,\r\n  \"accountNo\": 0,\r\n  \"loanAmount\": 0,\r\n  \"loanDate\": \"2024-11-29T14:08:14.859Z\",\r\n  \"loanName\": \"string\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseurl}}/Loan",
+					"host": [
+						"{{baseurl}}"
+					],
+					"path": [
+						"Loan"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Payutility",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"id\": 0,\r\n  \"amount\": 3000,\r\n  \"accountNo\": 2345,\r\n  \"refNo\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\r\n  \"dateTime\": \"2024-11-29T14:13:54.700Z\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseurl}}/UtilityPayment",
+					"host": [
+						"{{baseurl}}"
+					],
+					"path": [
+						"UtilityPayment"
+					]
+				},
+				"description": "Post Utility Payments and deduct Balance"
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseurl",
+			"value": "http://localhost:5007/api",
+			"type": "string"
+		}
+	]
+}
